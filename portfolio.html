@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Portfo-Hound</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/portfo-hound/portfo-hound.css">
+	<script type="text/javascript" src="js/jquery-1.9.1/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/hound-pack.polyfill.js"></script>
+	<script type="text/javascript" src="js/hound-pack.framework.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<button data-ph-trigger-target="all">All</button>
+		<button data-ph-trigger-target="cat1">Cat 1</button>
+		<button data-ph-trigger-target="cat2">Cat 2</button>
+		<button data-ph-trigger-target="cat3">Cat 3</button>
+		<ul class="portfo-hound">
+			<li data-ph-cat="all cat1"><img src="img/portfo-hound/img-1.jpg"/></li>
+			<li data-ph-cat="all cat2"><img src="img/portfo-hound/img-4.jpg"/></li>		
+			<li data-ph-cat="all cat3"><img src="img/portfo-hound/img-6.jpg"/></li>
+			<li data-ph-cat="all cat1"><img src="img/portfo-hound/img-2.jpg"/></li>
+			<li data-ph-cat="all cat2"><img src="img/portfo-hound/img-7.jpg"/></li>
+			<li data-ph-cat="all cat3"><img src="img/portfo-hound/img-8.jpg"/></li>
+			<li data-ph-cat="all cat1"><img src="img/portfo-hound/img-9.jpg"/></li>
+			<li data-ph-cat="all cat2"><img src="img/portfo-hound/img-10.jpg"/></li>
+			<li data-ph-cat="all cat3"><img src="img/portfo-hound/img-11.jpg"/></li>
+			<li data-ph-cat="all cat1"><img src="img/portfo-hound/img-12.jpg"/></li>
+		</ul>		
+	</div>
+
+	 <script type="text/javascript" src="js/portfo-hound/portfo-hound.js"></script>
+	 <script>
+	 	$(function(){
+	 		ph('ul.portfo-hound');
+	 	});
+	 </script>
+</body>
+</html>
