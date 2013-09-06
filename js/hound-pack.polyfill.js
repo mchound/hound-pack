@@ -69,3 +69,17 @@ function MergeRecursive(obj1, obj2) {
 
   return obj1;
 }
+
+linearSum = function(until){
+  var sum = 0;
+  for(var i = 1; i <= until; i++){
+    sum += i;
+  }
+  return sum;
+}
+
+Array.prototype.forEach = function(callback){
+  for(var i = 0; i < this.length; i++){
+    callback.call(this[i], i, this[i]);
+  };
+};

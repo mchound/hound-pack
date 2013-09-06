@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Portfo-Hound</title>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/slider-hound/slider-hound.css">
+	<script type="text/javascript" src="js/jquery-1.9.1/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/hound-pack.polyfill.js"></script>
+	<script type="text/javascript" src="js/hound-pack.framework.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="slider-hound">
+			<ul class="slides">
+				<li class="slide" data-speed="1">
+					<img src="img/slider-hound/slide1.jpg">
+					<div id="el1" class="sh-caption" data-start="0.2" data-x="200" data-y="200" data-speed="0.5" data-transition="rtl"><h2>Hej</h2></div>
+					<div id="el2" class="sh-caption" data-start="0.4" data-x="200" data-y="170" data-speed="0.5" data-transition="rtl"><h2>På</h2></div>
+					<div id="el3" class="sh-caption" data-start="0.6" data-x="200" data-y="140" data-speed="0.5" data-transition="rtl"><h2>Dig</h2></div>
+				</li>
+				<li class="slide" data-speed="1">
+					<img src="img/slider-hound/slide2.jpg">
+					<div class="sh-caption" data-start="0.2" data-x="200" data-y="200" data-speed="0.5" data-transition="ttb"><h2>Mår</h2></div>
+					<div class="sh-caption" data-start="0.4" data-x="200" data-y="170" data-speed="0.5" data-transition="ttb"><h2>Du</h2></div>
+					<div class="sh-caption" data-start="0.6" data-x="200" data-y="140" data-speed="0.5" data-transition="ttb"><h2>Bra</h2></div>
+				</li>
+				<li class="slide" data-speed="1" data-transition="fade">
+					<img src="img/slider-hound/slide3.jpg">
+				</li>
+			</ul>			
+		</div> 		
+	</div>
+
+	 <script type="text/javascript" src="js/slider-hound/slider-hound.js"></script>
+	 <script>
+	 var slider;
+	 	$(function(){
+	 		slider = sh('div.slider-hound');
+	 		slider.init(function(){
+	 			console.log('init');
+	 		});
+	 	});
+	 </script>
+</body>
+</html>

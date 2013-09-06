@@ -69,9 +69,9 @@
 			};
 		},
 
-		forEach: function(callback){
+		forEach: function(callback, iterationToken){
 		for (var i = 0; i < this.length; i++){
-			callback.call(this[i], i, this[i]);
+			callback.call(this[i], i, this[i], iterationToken);
 			};
 		},
 
@@ -144,6 +144,17 @@
 			for (var i = 0; i < this.length; i++){
 				func(this[i]);
 			};
+		},
+
+		imgOriginalSize: function(callback, iterationToken){
+			var 
+				imgSrc = this[0].src,
+				dummyImage = document.createElement('img');
+
+			dummyImage.src = imgSrc;
+			event(dummyImage, 'load', function(){				
+				callback.call(null, this.width, this.height, iterationToken);
+			});			
 		}
 	};
 

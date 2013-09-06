@@ -1,0 +1,19 @@
+div.slider-hound {
+  overflow: hidden;
+  color: white;
+}
+div.slider-hound ul.slides {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 600px;
+}
+div.slider-hound ul.slides li.slide {
+  position: absolute;
+  width: 100%;
+}
+div.slider-hound ul.slides li.slide img {
+  display: block;
+  max-width: 100%;
+}
