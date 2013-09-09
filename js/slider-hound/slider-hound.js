@@ -3,7 +3,7 @@
 	var defaults = {
 		startSlide: 0,
 		transition: 'ltr',
-		itemDuration: 4000,
+		itemDuration: 2000,
 		itemSpeed: 0.6
 	},	
 
@@ -123,8 +123,7 @@
 
 			this.variables.lastSlide = this.variables.activeSlide;
 			if(++this.variables.activeSlide > this.variables.items.length - 1)
-				this.variables.activeSlide = 0;
-			console.log(this.variables.activeSlide);
+				this.variables.activeSlide = 0;			
 			this.switch();
 		},
 
@@ -154,6 +153,7 @@
 		},
 
 		show: function(item, transitionDone){
+			this.variables.items[this.variables.lastSlide].li.style.zIndex = 0;
 			if(item){
 				switch (item.transition){
 					case 'ltr':
@@ -184,19 +184,22 @@
 		},
 
 		fadeTransition: function(item, transitionDone){
-			this.variables.items[this.variables.lastSlide].li.style.zIndex = 0;
 			item.li.style.zIndex = 999;
-			item.li.style.transition = 'opacity ' + item.speed + 's';			
-			hpack(item.li).opacity(100);
-			setTimeout(transitionDone, item.speed*1000);
+			var h_item = hpack(item.li);
+			h_item.transition('opacity ' + item.speed + 's')
+			h_item.transitionEnd(transitionDone);
+			h_item.opacity(100);
 		},
 
 		leftToRightTransition: function(item, transitionDone){
-			this.variables.items[this.variables.lastSlide].li.style.zIndex = 0;
 			item.li.style.zIndex = 999;
-			item.li.style.transition = 'left ' + item.speed + 's';			
-			item.li.style.left = '0px';
-			setTimeout(transitionDone, item.speed*1000);
+			var h_item = hpack(item.li);
+			h_item.transition('left ' + item.speed + 's');
+			h_item.transitionEnd(transitionDone);
+			item.li.style.left = '0%';
+			
+			
+			//setTimeout(transitionDone, item.speed*1000);
 		},
 
 		positionCaptions: function(item){

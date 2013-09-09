@@ -14,6 +14,30 @@ function event(element,event,func)
     }
 }
 
+function eventOnce(element,event,func)
+{
+    var eventFunc;
+
+    if(element.addEventListener)
+    {
+      eventFunc = function(){
+          element.removeEventListener(event, eventFunc, false);
+          func.call();
+      };
+
+      element.addEventListener(event, eventFunc ,false);
+    }
+    else if(element.attachEvent)
+    {
+      eventFunc = function(){
+          element.detachEvent('on' + event, eventFunc, false);
+          func.call();
+      };
+      
+      element.attachEvent("on"+event, eventFunc);
+    }
+}
+
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
     'use strict';
@@ -82,4 +106,18 @@ Array.prototype.forEach = function(callback){
   for(var i = 0; i < this.length; i++){
     callback.call(this[i], i, this[i]);
   };
+};
+
+function capitalize(string){
+    if(!string)
+    return '';
+  return string.charAt(0).toUpperCase() + string.slice(1);  
+};
+
+var transitionEndEventNames = {
+  'transition':       'transitionend', //'transitionEnd',
+  'MozTransition':    'transitionend',
+  'OTransition':      'oTransitionEnd',
+  'WebkitTransition': 'webkitTransitionEnd',
+  'msTransition':     'MSTransitionEnd'
 };
